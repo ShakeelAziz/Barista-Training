@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="برنامج تدريب باريستا احترافي باللغة العربية">
+    <meta name="author" content="Barista Academy">
+
+    <title>Altawthiq national Documentation - تدريب الباريستا</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="css/templatemo-festava-live.css" rel="stylesheet">
+
+    <!--
+
+TemplateMo 583 Festava Live
+
+https://templatemo.com/tm-583-festava-live
+
+-->
+    <style>
+        body {
+            font-family: "Cairo", sans-serif;
+        }
+
+        .training-plan-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.25rem;
+            text-align: right;
+        }
+
+        .training-plan-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 18px;
+            padding: 1.25rem;
+            backdrop-filter: blur(4px);
+            min-height: 220px;
+        }
+
+        .training-plan-card h3 {
+            color: #f8cb8b;
+            margin-bottom: 0.6rem;
+        }
+
+        .training-plan-card p {
+            margin-bottom: 0.35rem;
+        }
+
+        .training-plan-list {
+            list-style: none;
+            margin: 0.7rem 0 0;
+            padding: 0;
+        }
+
+        .training-plan-list li {
+            position: relative;
+            padding-right: 1rem;
+            margin-bottom: 0.3rem;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .training-plan-list li::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #f8cb8b;
+            position: absolute;
+            right: 0;
+            top: 0.65rem;
+        }
+
+        .pricing-thumb.reworked-plan {
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 22px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-thumb.reworked-plan::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(248, 203, 139, 0.18), rgba(255, 255, 255, 0));
+            pointer-events: none;
+        }
+
+        .plan-chip {
+            display: inline-block;
+            background: #f8cb8b;
+            color: #1e1e1e;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border-radius: 999px;
+            padding: 0.2rem 0.7rem;
+            margin-bottom: 0.65rem;
+        }
+
+        @media (max-width: 991px) {
+            .training-plan-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+
+        <header class="site-header">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-12 col-12 d-flex flex-wrap">
+                        <p class="d-flex me-4 mb-0">
+                            <i class="bi-cup-hot custom-icon me-2"></i>
+                            <strong class="text-dark">التوثيق الوطني للتدريب
+                            </strong>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    التوثيق الوطني للتدريب                </a>
+
+                <a href="#section_6" class="btn custom-btn d-lg-none ms-auto me-4">سجل الآن</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_1">الرئيسية</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_2">عن التدريب</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_3">المدربون</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_4">الخطة</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_5">الرسوم</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_6">التواصل</a>
+                        </li>
+                    </ul>
+
+                    <a href="#section_6" class="btn custom-btn d-lg-block d-none">احجز مقعدك</a>
+                </div>
+            </div>
+        </nav>
+
+
+        <section class="hero-section" id="section_1">
+            <div class="section-overlay"></div>
+
+            <div class="container d-flex justify-content-center align-items-center">
+                <div class="row">
+
+                    <div class="col-12 mt-auto mb-5 text-center">
+                        <small>رحلة احتراف القهوة تبدأ هنا</small>
+
+                        <h1 class="text-white mb-5">دورة تدريب الباريستا</h1>
+
+                        <a class="btn custom-btn smoothscroll" href="#section_2">اكتشف البرنامج</a>
+                    </div>
+
+                    <div class="col-lg-12 col-12 mt-auto d-flex flex-column flex-lg-row text-center">
+                        <div class="date-wrap">
+                            <h5 class="text-white">
+                                <i class="custom-icon bi-clock me-2"></i>
+                                4 أسابيع تدريبية - 40+ ساعة
+                            </h5>
+                        </div>
+
+                        <div class="location-wrap mx-auto py-3 py-lg-0">
+                            <h5 class="text-white">
+                                <i class="custom-icon bi-geo-alt me-2"></i>
+                                الرياض حي المربع
+                            </h5>
+                        </div>
+
+                        <div class="social-share">
+                            <ul class="social-icon d-flex align-items-center justify-content-center">
+                                <span class="text-white me-3">تابعنا:</span>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link">
+                                        <span class="bi-facebook"></span>
+                                    </a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link">
+                                        <span class="bi-instagram"></span>
+                                    </a>
+                                </li>
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link">
+                                        <span class="bi-youtube"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-wrap">
+                <video autoplay="" loop="" muted="" class="custom-video" poster="">
+                    <source src="video/barista.mp4" type="video/mp4">
+
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+
+        <section class="about-section section-padding" id="section_2">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12 mb-4 mb-lg-0 d-flex align-items-center">
+                        <div class="services-info">
+                            <h2 class="text-white mb-4">عن برنامج تدريب الباريستا</h2>
+
+                            <p class="text-white">برنامج تدريبي عملي باللغة العربية يركز على تأهيل المتدرب للعمل في المقاهي المختصة باحتراف.</p>
+
+                            <h6 class="text-white mt-4">ماذا ستتعلم؟</h6>
+
+                            <p class="text-white">أساسيات القهوة، إتقان الإسبريسو، تبخير الحليب، فن اللاتيه آرت، وخدمة العملاء.</p>
+
+                            <h6 class="text-white mt-4">لمن هذا البرنامج؟</h6>
+
+                            <p class="text-white">للمبتدئين والطامحين لبدء مسار مهني احترافي في عالم القهوة المختصة.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-12">
+                        <div class="about-text-wrap">
+                            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop" class="about-image img-fluid">
+
+                            <div class="about-text-info d-flex">
+                                <div class="d-flex">
+                                    <i class="about-text-icon bi-cup-hot"></i>
+                                </div>
+
+
+                                <div class="ms-4">
+                                    <h3>تجربة تدريب عملية</h3>
+
+                                    <p class="mb-0">تطبيق واقعي داخل بيئة تحاكي المقاهي المختصة</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="artists-section section-padding" id="section_3">
+            <div class="container">
+                <div class="row justify-content-center">
+
+                    <div class="col-12 text-center">
+                        <h2 class="mb-4">تعرف على المدربين</h2>
+                    </div>
+
+                    <div class="col-lg-5 col-12">
+                        <div class="artists-thumb">
+                            <div class="artists-image-wrap">
+                                <img src="https://via.placeholder.com/800x800?text=Coach+Placeholder"
+                                    class="artists-image img-fluid">
+                            </div>
+
+                            <div class="artists-hover">
+                                <p>
+                                    <strong>الاسم:</strong>
+                                    أحمد العلي
+                                </p>
+
+                                <p>
+                                    <strong>الخبرة:</strong>
+                                    8 سنوات
+                                </p>
+
+                                <p>
+                                    <strong>التخصص:</strong>
+                                    إسبريسو وضبط الجودة
+                                </p>
+
+                                <hr>
+
+                                <p class="mb-0">
+                                    <strong>ملف تعريفي:</strong>
+                                    <a href="#">عرض السيرة المهنية</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 col-12">
+                        <div class="artists-thumb">
+                            <div class="artists-image-wrap">
+                                <img src="https://via.placeholder.com/800x800?text=Coach+Placeholder"
+                                    class="artists-image img-fluid">
+                            </div>
+
+                            <div class="artists-hover">
+                                <p>
+                                    <strong>الاسم:</strong>
+                                    نورا خالد
+                                </p>
+
+                                <p>
+                                    <strong>الخبرة:</strong>
+                                    6 سنوات
+                                </p>
+
+                                <p>
+                                    <strong>التخصص:</strong>
+                                    تبخير الحليب وفن اللاتيه آرت
+                                </p>
+
+                                <hr>
+
+                                <p class="mb-0">
+                                    <strong>ملف تعريفي:</strong>
+                                    <a href="#">عرض السيرة المهنية</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="artists-thumb">
+                            <img src="https://via.placeholder.com/800x800?text=Coach+Placeholder"
+                                class="artists-image img-fluid">
+
+                            <div class="artists-hover">
+                                <p>
+                                    <strong>الاسم:</strong>
+                                    سعود الحربي
+                                </p>
+
+                                <p>
+                                    <strong>الخبرة:</strong>
+                                    7 سنوات
+                                </p>
+
+                                <p>
+                                    <strong>التخصص:</strong>
+                                    التحضير اليدوي V60 وكيمكس
+                                </p>
+
+                                <hr>
+
+                                <p class="mb-0">
+                                    <strong>ملف تعريفي:</strong>
+                                    <a href="#">عرض السيرة المهنية</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="schedule-section section-padding" id="section_4">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12 text-center">
+                        <h2 class="text-white mb-4">الخطة التدريبية</h2>
+                        <div class="training-plan-grid">
+                            <div class="training-plan-card">
+                                <h3>الأسبوع 1</h3>
+                                <p>تأسيس مهارات الباريستا</p>
+                                <ul class="training-plan-list">
+                                    <li>مقدمة القهوة المختصة</li>
+                                    <li>التعرف على المعدات</li>
+                                    <li>تنظيم محطة العمل</li>
+                                </ul>
+                            </div>
+                            <div class="training-plan-card">
+                                <h3>الأسبوع 2</h3>
+                                <p>إتقان الإسبريسو</p>
+                                <ul class="training-plan-list">
+                                    <li>ضبط الطحن والجرعة</li>
+                                    <li>معايير الاستخلاص</li>
+                                    <li>حل مشاكل الطعم</li>
+                                </ul>
+                            </div>
+                            <div class="training-plan-card">
+                                <h3>الأسبوع 3 - 4</h3>
+                                <p>التطبيق المتقدم</p>
+                                <ul class="training-plan-list">
+                                    <li>تبخير الحليب واللاتيه آرت</li>
+                                    <li>تشغيل البار تحت الضغط</li>
+                                    <li>اختبار نهائي + شهادة</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="pricing-section section-padding section-bg" id="section_5">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-8 col-12 mx-auto">
+                        <h2 class="text-center mb-4">خطط الاشتراك</h2>
+                    </div>
+
+                    <div class="col-lg-6 col-12">
+                        <div class="pricing-thumb reworked-plan">
+                            <div class="d-flex">
+                                <div>
+                                    <span class="plan-chip">الأكثر طلبًا</span>
+                                    <h3><small>الخطة الأساسية</small> 950 ريال</h3>
+                                    <p>تشمل التدريب العملي والشهادة</p>
+                                </div>
+
+                                <p class="pricing-tag ms-auto">وفر حتى <span>20%</span></p>
+                            </div>
+
+                            <ul class="pricing-list mt-3">
+                                <li class="pricing-list-item">40+ ساعة تدريبية</li>
+                                <li class="pricing-list-item">تطبيق عملي مباشر</li>
+                                <li class="pricing-list-item">مواد تدريبية عربية</li>
+                                <li class="pricing-list-item">شهادة إتمام الدورة</li>
+                            </ul>
+
+                            <a class="link-fx-1 color-contrast-higher mt-4" href="#section_6">
+                                <span>سجل الآن</span>
+                                <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
+                                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="16" cy="16" r="15.5"></circle>
+                                        <line x1="10" y1="18" x2="16" y2="12"></line>
+                                        <line x1="16" y1="12" x2="22" y2="18"></line>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-12 mt-4 mt-lg-0">
+                        <div class="pricing-thumb reworked-plan">
+                            <div class="d-flex">
+                                <div>
+                                    <span class="plan-chip">مسار مهني متقدم</span>
+                                    <h3><small>الخطة المتقدمة</small> 1450 ريال</h3>
+                                    <p>تدريب موسع + متابعة مهنية بعد التخرج</p>
+                                </div>
+                            </div>
+
+                            <ul class="pricing-list mt-3">
+                                <li class="pricing-list-item">كل مزايا الخطة الأساسية</li>
+                                <li class="pricing-list-item">ساعات تطبيق إضافية</li>
+                                <li class="pricing-list-item">جلسات تطوير فردية</li>
+                                <li class="pricing-list-item">إرشاد للالتحاق بسوق العمل</li>
+                                <li class="pricing-list-item">أولوية في الدعم</li>
+                            </ul>
+
+                            <a class="link-fx-1 color-contrast-higher mt-4" href="#section_6">
+                                <span>احجز مقعدك</span>
+                                <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
+                                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="16" cy="16" r="15.5"></circle>
+                                        <line x1="10" y1="18" x2="16" y2="12"></line>
+                                        <line x1="16" y1="12" x2="22" y2="18"></line>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="contact-section section-padding" id="section_6">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-8 col-12 mx-auto">
+                        <h2 class="text-center mb-4">مهتم؟ تواصل معنا الآن</h2>
+
+                        <nav class="d-flex justify-content-center">
+                            <div class="nav nav-tabs align-items-baseline justify-content-center" id="nav-tab"
+                                role="tablist">
+                                <button class="nav-link active" id="nav-ContactForm-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-ContactForm" type="button" role="tab"
+                                    aria-controls="nav-ContactForm" aria-selected="false">
+                                    <h5>نموذج التسجيل</h5>
+                                </button>
+
+                                <button class="nav-link" id="nav-ContactMap-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-ContactMap" type="button" role="tab"
+                                    aria-controls="nav-ContactMap" aria-selected="false">
+                                    <h5>الموقع</h5>
+                                </button>
+                            </div>
+                        </nav>
+
+                        <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-ContactForm" role="tabpanel"
+                                aria-labelledby="nav-ContactForm-tab">
+                                <form class="custom-form contact-form mb-5 mb-lg-0" action="#" method="post"
+                                    role="form">
+                                    <div class="contact-form-body">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <input type="text" name="contact-name" id="contact-name"
+                                                    class="form-control" placeholder="الاسم الكامل" required>
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <input type="email" name="contact-email" id="contact-email"
+                                                    pattern="[^ @]*@[^ @]*" class="form-control"
+                                                    placeholder="البريد الإلكتروني" required>
+                                            </div>
+                                        </div>
+
+                                        <input type="text" name="contact-company" id="contact-company"
+                                            class="form-control" placeholder="المدينة" required>
+
+                                        <textarea name="contact-message" rows="3" class="form-control"
+                                            id="contact-message" placeholder="اكتب استفسارك"></textarea>
+
+                                        <div class="col-lg-4 col-md-10 col-8 mx-auto">
+                                            <button type="submit" class="form-control">إرسال الطلب</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="tab-pane fade" id="nav-ContactMap" role="tabpanel"
+                                aria-labelledby="nav-ContactMap-tab">
+                                <iframe class="google-map"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3446.530764932125!2d46.704258300000006!3d24.6602205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2ee37d6558648b%3A0x3cb7901cd29cd71e!2z2LTYsdmD2Kkg2KfZhNiq2YjYq9mK2YIg2KfZhNmI2LfZhtmKINmE2YTYqtiv2LHZitio!5e1!3m2!1sen!2ssa!4v1776859116233!5m2!1sen!2ssa"
+                                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <!-- You can easily copy the embed code from Google Maps -> Share -> Embed a map // -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="site-footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12">
+                        <h2 class="text-white mb-lg-0">التوثيق الوطني للتدريب</h2>
+                    </div>
+
+                    <div class="col-lg-6 col-12 d-flex justify-content-lg-end align-items-center">
+                        <ul class="social-icon d-flex justify-content-lg-end">
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-twitter"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-instagram"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-youtube"></span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-12 mb-4 pb-2">
+                    <h5 class="site-footer-title mb-3">روابط سريعة</h5>
+
+                    <ul class="site-footer-links">
+                        <li class="site-footer-link-item">
+                            <a href="#section_1" class="site-footer-link">الرئيسية</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#section_2" class="site-footer-link">عن التدريب</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#section_3" class="site-footer-link">المدربون</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#section_4" class="site-footer-link">الخطة</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#section_5" class="site-footer-link">الرسوم</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#section_6" class="site-footer-link">التواصل</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                    <h5 class="site-footer-title mb-3">للاستفسار</h5>
+
+                    <p class="text-white d-flex mb-1">
+                        <a href="tel:+966553300598" class="site-footer-link">
+                            966553300598+
+                        </a>
+                    </p>
+
+                    <p class="text-white d-flex">
+                        <a href="mailto:info@altawthiq.com" class="site-footer-link">
+                            info@altawthiq.com
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-11 mb-4 mb-lg-0 mb-md-0">
+                    <h5 class="site-footer-title mb-3">الموقع</h5>
+
+                    <p class="text-white d-flex mt-3 mb-2">
+                        الرياض حي المربع</p>
+
+                    <a class="link-fx-1 color-contrast-higher mt-3" href="#">
+                        <span>عرض الخريطة</span>
+                        <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
+                            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="16" cy="16" r="15.5"></circle>
+                                <line x1="10" y1="18" x2="16" y2="12"></line>
+                                <line x1="16" y1="12" x2="22" y2="18"></line>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-12 mt-5">
+                        <p class="copyright-text">Copyright © 2026 التوثيق الوطني للتدريب</p>
+                    </div>
+
+                    <div class="col-lg-8 col-12 mt-lg-5">
+                        <ul class="site-footer-links">
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">الشروط والأحكام</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">سياسة الخصوصية</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">ملاحظاتك</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--
+
+T e m p l a t e M o
+
+-->
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/click-scroll.js"></script>
+    <script src="js/custom.js"></script>
+
+</body>
+
+</html>
