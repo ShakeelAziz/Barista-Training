@@ -21,27 +21,28 @@
             font-family: "Tajawal", sans-serif;
         }
 
-        /* تخصيص عرض خطط الدفع مع خصم 400 ريال */
+        /* تخصيص عرض خطط الدفع مع خصم 400 ريال - تم تغيير الخلفية إلى فاتحة */
         .pricing-section {
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
         }
 
         .pricing-thumb.reworked-plan {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(248, 203, 139, 0.3);
+            border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 28px;
             padding: 2rem 1.8rem;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
             height: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
 
         .pricing-thumb.reworked-plan:hover {
             transform: translateY(-8px);
-            border-color: rgba(248, 203, 139, 0.6);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
         /* شارة توفير 400 ريال */
@@ -66,19 +67,19 @@
         .price-current {
             font-size: 2.5rem;
             font-weight: 800;
-            color: #f8cb8b;
+            color: #b87333;
             margin: 0.75rem 0 0.25rem;
         }
 
         .price-old {
             font-size: 1rem;
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(0, 0, 0, 0.5);
             text-decoration: line-through;
             margin-right: 10px;
         }
 
         .price-saved {
-            color: #4ade80;
+            color: #2e7d32;
             font-size: 0.9rem;
             font-weight: 500;
             margin-top: 5px;
@@ -86,31 +87,31 @@
 
         .plan-chip {
             display: inline-block;
-            background: rgba(248, 203, 139, 0.15);
-            color: #f8cb8b;
+            background: rgba(184, 115, 51, 0.15);
+            color: #b87333;
             font-size: 0.8rem;
             font-weight: 700;
             border-radius: 999px;
             padding: 0.3rem 1rem;
             margin-bottom: 0.65rem;
-            border: 1px solid rgba(248, 203, 139, 0.3);
+            border: 1px solid rgba(184, 115, 51, 0.3);
         }
 
         .link-fx-1 {
             margin-top: 25px;
             padding-top: 18px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
             text-decoration: none;
             display: flex;
             align-items: center;
             justify-content: space-between;
             transition: all 0.3s ease;
-            color: #f8cb8b;
+            color: #b87333;
             font-weight: 600;
         }
 
         .link-fx-1:hover {
-            color: #fff;
+            color: #000;
             gap: 10px;
         }
 
@@ -133,8 +134,8 @@
         }
 
         .training-plan-card {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 18px;
             padding: 1.25rem;
             backdrop-filter: blur(4px);
@@ -174,6 +175,30 @@
             .pricing-thumb.reworked-plan {
                 padding: 1.5rem;
             }
+        }
+
+        /* جعل خلفية "عن برنامج تدريب الباريستا" فاتحة */
+        .about-section {
+            background: #f5f0eb !important;
+        }
+        .about-section .text-white,
+        .about-section .text-white h2,
+        .about-section .text-white h6,
+        .about-section .text-white p {
+            color: #2c2c2c !important;
+        }
+        .services-info h2,
+        .services-info p,
+        .services-info h6 {
+            color: #2c2c2c !important;
+        }
+        .about-text-wrap .about-text-info h3,
+        .about-text-wrap .about-text-info p {
+            color: #2c2c2c !important;
+        }
+        .about-text-wrap .about-text-info {
+            background: rgba(255,255,240,0.9);
+            border-radius: 20px;
         }
     </style>
 </head>
@@ -256,12 +281,12 @@
                 <div class="row">
                     <div class="col-lg-6 col-12 mb-4 mb-lg-0 d-flex align-items-center">
                         <div class="services-info">
-                            <h2 class="text-white mb-4">عن برنامج تدريب الباريستا</h2>
-                            <p class="text-white">برنامج تدريبي عملي باللغة العربية يركز على تأهيل المتدرب للعمل في المقاهي المختصة باحتراف.</p>
-                            <h6 class="text-white mt-4">ماذا ستتعلم؟</h6>
-                            <p class="text-white">أساسيات القهوة، إتقان الإسبريسو، تبخير الحليب، فن اللاتيه آرت، وخدمة العملاء.</p>
-                            <h6 class="text-white mt-4">لمن هذا البرنامج؟</h6>
-                            <p class="text-white">للمبتدئين والطامحين لبدء مسار مهني احترافي في عالم القهوة المختصة.</p>
+                            <h2 class="mb-4">عن برنامج تدريب الباريستا</h2>
+                            <p>برنامج تدريبي عملي باللغة العربية يركز على تأهيل المتدرب للعمل في المقاهي المختصة باحتراف.</p>
+                            <h6 class="mt-4">ماذا ستتعلم؟</h6>
+                            <p>أساسيات القهوة، إتقان الإسبريسو، تبخير الحليب، فن اللاتيه آرت، وخدمة العملاء.</p>
+                            <h6 class="mt-4">لمن هذا البرنامج؟</h6>
+                            <p>للمبتدئين والطامحين لبدء مسار مهني احترافي في عالم القهوة المختصة.</p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-12">
@@ -313,13 +338,13 @@
             </div>
         </section>
 
-        <!-- قسم خطط الدفع مع التركيز على "وفر 400 ريال" -->
+        <!-- قسم خطط الدفع مع التركيز على "وفر 400 ريال" (تم تغيير اللون إلى فاتح) -->
         <section class="pricing-section section-padding section-bg" id="section_5">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-12 mx-auto text-center">
-                        <h2 class="text-white mb-3">خطط الدفع</h2>
-                        <p class="text-white-50 mb-5">استثمار بسيط … مقابل مهارة تفتح لك باب دخل</p>
+                        <h2 class="text-dark mb-3">خطط الدفع</h2>
+                        <p class="text-dark-50 mb-5">استثمار بسيط … مقابل مهارة تفتح لك باب دخل</p>
                     </div>
                 </div>
 
@@ -343,7 +368,7 @@
 
                            
 
-<a class="link-fx-1" href="https://altawthiq.com/checkout/?add-to-cart=903">
+<a class="link-fx-1" href="https://altawthiq.com/checkout/?add-to-cart=903&quantity=1"" style="text-decoration: none; justify-content: center; gap: 0;">
                                 <span>※ احجز مقعدك</span>
                                 <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
                                     <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -376,7 +401,7 @@
 
 
 
-<a class="link-fx-1" href="https://altawthiq.com/checkout/?add-to-cart=904">
+<a class="link-fx-1" href="https://altawthiq.com/checkout/?add-to-cart=904&quantity=1"" style="text-decoration: none; justify-content: center; gap: 0;">
                                 <span>※ احجز مقعدك</span>
                                 <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
                                     <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -398,47 +423,30 @@
                 <div class="row">
                     <div class="col-lg-8 col-12 mx-auto">
                         <h2 class="text-center mb-4">مهتم؟ تواصل معنا الآن</h2>
+
+<!-- البطاقة الجديدة لرقم التواصل -->
+                        <div class="contact-card text-center">
+                            <div class="contact-icon">
+                                <i class="bi bi-telephone-fill"></i>
+                            </div>
+                            <div class="contact-label">للتواصل والاستفسار</div>
+                            <a href="tel:+966553300598" class="phone-link text-decoration-none">
+                                <span class="phone-number">+966 55 330 0598</span>
+                            </a>
+
                         <nav class="d-flex justify-content-center">
                             <div class="nav nav-tabs align-items-baseline justify-content-center" id="nav-tab" role="tablist">
-                                <button class="nav-link active" id="nav-ContactForm-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-ContactForm" type="button" role="tab"
-                                    aria-controls="nav-ContactForm" aria-selected="false">
-                                    <h5>نموذج التسجيل</h5>
-                                </button>
-                                <button class="nav-link" id="nav-ContactMap-tab" data-bs-toggle="tab"
+                                <!-- تم حذف زر "نموذج التسجيل" نهائياً كما هو مطلوب، وإبقاء زر "الموقع" فقط -->
+                                <button class="nav-link active" id="nav-ContactMap-tab" data-bs-toggle="tab"
                                     data-bs-target="#nav-ContactMap" type="button" role="tab"
-                                    aria-controls="nav-ContactMap" aria-selected="false">
+                                    aria-controls="nav-ContactMap" aria-selected="true">
                                     <h5>الموقع</h5>
                                 </button>
                             </div>
                         </nav>
                         <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-ContactForm" role="tabpanel"
-                                aria-labelledby="nav-ContactForm-tab">
-                                <form class="custom-form contact-form mb-5 mb-lg-0" action="#" method="post" role="form">
-                                    <div class="contact-form-body">
-                                        <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-12">
-                                                <input type="text" name="contact-name" id="contact-name"
-                                                    class="form-control" placeholder="الاسم الكامل" required>
-                                            </div>
-                                            <div class="col-lg-6 col-md-6 col-12">
-                                                <input type="email" name="contact-email" id="contact-email"
-                                                    pattern="[^ @]*@[^ @]*" class="form-control"
-                                                    placeholder="البريد الإلكتروني" required>
-                                            </div>
-                                        </div>
-                                        <input type="text" name="contact-company" id="contact-company"
-                                            class="form-control" placeholder="المدينة" required>
-                                        <textarea name="contact-message" rows="3" class="form-control"
-                                            id="contact-message" placeholder="اكتب استفسارك"></textarea>
-                                        <div class="col-lg-4 col-md-10 col-8 mx-auto">
-                                            <button type="submit" class="form-control">إرسال الطلب</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="tab-pane fade" id="nav-ContactMap" role="tabpanel"
+                            <!-- تم حذف tab-pane الخاص بنموذج التسجيل، وتم ترك خريطة الموقع فقط وجعلها نشطة -->
+                            <div class="tab-pane fade show active" id="nav-ContactMap" role="tabpanel"
                                 aria-labelledby="nav-ContactMap-tab">
                                 <iframe class="google-map"
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3625.9398292183596!2d46.70643468500097!3d24.6601993841488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f050035914655%3A0x3f84ffe264b6fbd7!2z2YXZhtiq2K_ZiSDYp9mE2YjYudmKINin2YTZgdmD2LHZig!5e0!3m2!1sar!2ssa!4v1776866706731!5m2!1sar!2ssa"
