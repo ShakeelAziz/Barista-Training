@@ -4,36 +4,126 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <meta name="description" content="برنامج تدريب باريستا احترافي باللغة العربية">
     <meta name="author" content="Barista Academy">
-
     <title>Altawthiq national Documentation - تدريب الباريستا</title>
 
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
     <link href="css/bootstrap-icons.css" rel="stylesheet">
-
     <link href="css/templatemo-festava-live.css" rel="stylesheet">
 
-    <!--
-
-TemplateMo 583 Festava Live
-
-https://templatemo.com/tm-583-festava-live
-
--->
     <style>
         body {
-    font-family: "Tajawal", sans-serif;
-}
+            font-family: "Tajawal", sans-serif;
+        }
+
+        /* تخصيص عرض خطط الدفع مع خصم 400 ريال */
+        .pricing-section {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+        }
+
+        .pricing-thumb.reworked-plan {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(248, 203, 139, 0.3);
+            border-radius: 28px;
+            padding: 2rem 1.8rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .pricing-thumb.reworked-plan:hover {
+            transform: translateY(-8px);
+            border-color: rgba(248, 203, 139, 0.6);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* شارة توفير 400 ريال */
+        .savings-badge {
+            background: linear-gradient(135deg, #f8cb8b, #e6a017);
+            color: #1e1e1e;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 800;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 4px 12px rgba(248, 203, 139, 0.3);
+        }
+
+        .savings-badge i {
+            font-size: 1.1rem;
+        }
+
+        .price-current {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #f8cb8b;
+            margin: 0.75rem 0 0.25rem;
+        }
+
+        .price-old {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: line-through;
+            margin-right: 10px;
+        }
+
+        .price-saved {
+            color: #4ade80;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+
+        .plan-chip {
+            display: inline-block;
+            background: rgba(248, 203, 139, 0.15);
+            color: #f8cb8b;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border-radius: 999px;
+            padding: 0.3rem 1rem;
+            margin-bottom: 0.65rem;
+            border: 1px solid rgba(248, 203, 139, 0.3);
+        }
+
+        .link-fx-1 {
+            margin-top: 25px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            color: #f8cb8b;
+            font-weight: 600;
+        }
+
+        .link-fx-1:hover {
+            color: #fff;
+            gap: 10px;
+        }
+
+        .link-fx-1 .icon {
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .link-fx-1:hover .icon {
+            transform: translateX(-5px);
+        }
 
         .training-plan-grid {
             display: grid;
@@ -48,72 +138,41 @@ https://templatemo.com/tm-583-festava-live
             border-radius: 18px;
             padding: 1.25rem;
             backdrop-filter: blur(4px);
-            min-height: 220px;
-        }
-
-        .training-plan-card h3 {
-            color: #f8cb8b;
-            margin-bottom: 0.6rem;
-        }
-
-        .training-plan-card p {
-            margin-bottom: 0.35rem;
         }
 
         .training-plan-list {
             list-style: none;
-            margin: 0.7rem 0 0;
+            margin: 0;
             padding: 0;
         }
 
         .training-plan-list li {
             position: relative;
             padding-right: 1rem;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.6rem;
             color: #ffffff;
-            font-weight: 700;
+            font-weight: 500;
         }
 
         .training-plan-list li::before {
-            content: "";
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: #f8cb8b;
+            content: "☕";
             position: absolute;
-            right: 0;
-            top: 0.65rem;
-        }
-
-        .pricing-thumb.reworked-plan {
-            border: 1px solid rgba(255, 255, 255, 0.22);
-            border-radius: 22px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .pricing-thumb.reworked-plan::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(248, 203, 139, 0.18), rgba(255, 255, 255, 0));
-            pointer-events: none;
-        }
-
-        .plan-chip {
-            display: inline-block;
-            background: #f8cb8b;
-            color: #1e1e1e;
+            right: -0.2rem;
+            top: 0;
             font-size: 0.8rem;
-            font-weight: 700;
-            border-radius: 999px;
-            padding: 0.2rem 0.7rem;
-            margin-bottom: 0.65rem;
         }
 
-        @media (max-width: 991px) {
+        @media (max-width: 768px) {
             .training-plan-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .price-current {
+                font-size: 1.8rem;
+            }
+            
+            .pricing-thumb.reworked-plan {
+                padding: 1.5rem;
             }
         }
     </style>
@@ -126,190 +185,126 @@ https://templatemo.com/tm-583-festava-live
         <header class="site-header">
             <div class="container">
                 <div class="row">
-
-                    <div class="col-lg-12 col-12 d-flex flex-wrap">
-                        <p class="d-flex me-4 mb-0">
-    <img src="images/wn5wnp-Y_400x400.png" alt="logo" style="height:40px; margin-left:10px;">
-
-                            <strong class="text-dark">منتدى الوعي الفكري
-                            </strong>
-                        </p>
-                    </div>
-
+                    <div class="col-lg-12 col-12 d-flex flex-wrap"></div>
                 </div>
             </div>
         </header>
 
-
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    منتدى الوعي الفكري                </a>
-
+                <img src="images/wn5wnp-Y_400x400.png" alt="logo" style="height:40px; margin-left:10px;">
+                <a class="navbar-brand" href="index.html">منتدى الوعي الفكري</a>
                 <a href="#section_6" class="btn custom-btn d-lg-none ms-auto me-4">سجل الآن</a>
-
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
-                        <li class="nav-item">
-                           
-
-                        <li class="nav-item">
-                         
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_6">التواصل</a>
-                        </li>
+                        <li class="nav-item"></li>
+                        <li class="nav-item"></li>
                     </ul>
-
                     <a href="#section_6" class="btn custom-btn d-lg-block d-none">احجز مقعدك</a>
                 </div>
             </div>
         </nav>
 
-
         <section class="hero-section" id="section_1">
             <div class="section-overlay"></div>
-
             <div class="container d-flex justify-content-center align-items-center">
                 <div class="row">
-
                     <div class="col-12 mt-auto mb-5 text-center">
                         <small>رحلة احتراف القهوة تبدأ هنا</small>
-
                         <h1 class="text-white mb-5">دورة تدريب الباريستا</h1>
-
                     </div>
-
                     <div class="col-lg-12 col-12 mt-auto d-flex flex-column flex-lg-row text-center">
                         <div class="date-wrap">
                             <h5 class="text-white">
                                 <i class="custom-icon bi-clock me-2"></i>
-                               5 أسابيع تدريبية - بمعدل ساعتين في اليوم 
+                                5 أسابيع تدريبية - بمعدل ساعتين في اليوم
                             </h5>
                         </div>
-
                         <div class="location-wrap mx-auto py-3 py-lg-0">
                             <h5 class="text-white">
                                 <i class="custom-icon bi-geo-alt me-2"></i>
-                                الرياض حي المربع
+                                الرياض، حي المربع<br> بجانب محطة الجوازات
                             </h5>
                         </div>
-
                         <div class="social-share">
                             <ul class="social-icon d-flex align-items-center justify-content-center">
                                 <span class="text-white me-3">تابعنا:</span>
-
-                                
-
                                 <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link">
-                                        <span class="bi-instagram"></span>
-                                    </a>
+                                    <a href="#" class="social-icon-link"><span class="bi-instagram"></span></a>
                                 </li>
                                 <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link">
-                                        <span class="bi-youtube"></span>
-                                    </a>
+                                    <a href="#" class="social-icon-link"><span class="bi-tiktok"></span></a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-
             <div class="video-wrap">
                 <video autoplay="" loop="" muted="" class="custom-video" poster="">
                     <source src="video/barista.mp4" type="video/mp4">
-
-                    Your browser does not support the video tag.
                 </video>
             </div>
         </section>
 
-
         <section class="about-section section-padding" id="section_2">
             <div class="container">
                 <div class="row">
-
                     <div class="col-lg-6 col-12 mb-4 mb-lg-0 d-flex align-items-center">
                         <div class="services-info">
                             <h2 class="text-white mb-4">عن برنامج تدريب الباريستا</h2>
-
                             <p class="text-white">برنامج تدريبي عملي باللغة العربية يركز على تأهيل المتدرب للعمل في المقاهي المختصة باحتراف.</p>
-
                             <h6 class="text-white mt-4">ماذا ستتعلم؟</h6>
-
                             <p class="text-white">أساسيات القهوة، إتقان الإسبريسو، تبخير الحليب، فن اللاتيه آرت، وخدمة العملاء.</p>
-
                             <h6 class="text-white mt-4">لمن هذا البرنامج؟</h6>
-
                             <p class="text-white">للمبتدئين والطامحين لبدء مسار مهني احترافي في عالم القهوة المختصة.</p>
                         </div>
                     </div>
-
                     <div class="col-lg-6 col-12">
                         <div class="about-text-wrap">
                             <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop" class="about-image img-fluid">
-
                             <div class="about-text-info d-flex">
                                 <div class="d-flex">
                                     <i class="about-text-icon bi-cup-hot"></i>
                                 </div>
-
-
                                 <div class="ms-4">
                                     <h3>تجربة تدريب عملية</h3>
-
                                     <p class="mb-0">تطبيق واقعي داخل بيئة تحاكي المقاهي المختصة</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
-
-
-
-
 
         <section class="schedule-section section-padding" id="section_4">
             <div class="container">
                 <div class="row">
-
                     <div class="col-12 text-center">
-                        <h2 class="text-white mb-4">الخطة التدريبية</h2>
+                        <h2 class="text-white mb-4">ماذا ستتعلم خلال البرنامج؟</h2>
                         <div class="training-plan-grid">
                             <div class="training-plan-card">
-                                <h3>الأسبوع 1</h3>
-                                <p>تأسيس مهارات الباريستا</p>
                                 <ul class="training-plan-list">
-                                    <li>مقدمة القهوة المختصة</li>
-                                    <li>التعرف على المعدات</li>
-                                    <li>تنظيم محطة العمل</li>
+                                   <li>اختيار نوع القهوة المناسب</li>
+                                    <li>طريقة الطحن الصحيحة</li>
                                 </ul>
                             </div>
                             <div class="training-plan-card">
-                                <h3>الأسبوع 2</h3>
-                                <p>إتقان الإسبريسو</p>
                                 <ul class="training-plan-list">
-                                    <li>ضبط الطحن والجرعة</li>
-                                    <li>معايير الاستخلاص</li>
-                                    <li>حل مشاكل الطعم</li>
+                                    <li>الاستخلاص المثالي للإسبريسو</li>
+                                    <li>إعداد المشروبات الساخنة والباردة</li>
                                 </ul>
                             </div>
                             <div class="training-plan-card">
-                                <h3>الأسبوع 3 - 4</h3>
-                                <p>التطبيق المتقدم</p>
                                 <ul class="training-plan-list">
-                                    <li>تبخير الحليب واللاتيه آرت</li>
-                                    <li>تشغيل البار تحت الضغط</li>
-                                    <li>اختبار نهائي + شهادة</li>
+                                      <li>أساسيات الرسم على القهوة
+<br> (Latte Art)</li>
+                                    <li>تقديم المشروبات بثقة وثبات</li>
                                 </ul>
                             </div>
                         </div>
@@ -318,36 +313,38 @@ https://templatemo.com/tm-583-festava-live
             </div>
         </section>
 
-
+        <!-- قسم خطط الدفع مع التركيز على "وفر 400 ريال" -->
         <section class="pricing-section section-padding section-bg" id="section_5">
             <div class="container">
                 <div class="row">
-
-                    <div class="col-lg-8 col-12 mx-auto">
-                        <h2 class="text-center mb-4">خطط الاشتراك</h2>
+                    <div class="col-lg-8 col-12 mx-auto text-center">
+                        <h2 class="text-white mb-3">خطط الدفع</h2>
+                        <p class="text-white-50 mb-5">استثمار بسيط … مقابل مهارة تفتح لك باب دخل</p>
                     </div>
+                </div>
 
+                <div class="row g-4">
+                    <!-- الخطة الأولى: داخل المقر -->
                     <div class="col-lg-6 col-12">
                         <div class="pricing-thumb reworked-plan">
-                            <div class="d-flex">
+                            <div class="d-flex justify-content-between align-items-start flex-wrap gap-3">
                                 <div>
-                                    <span class="plan-chip">الأكثر طلبًا</span>
-                                    <h3><small>الخطة الأساسية</small> 950 ريال</h3>
-                                    <p>تشمل التدريب العملي والشهادة</p>
+                                    <span class="plan-chip"> في مقر منتدى الوعي الفكري</span>
+                                    <div class="price-current">800 <span style="font-size: 1rem;">ريال</span></div>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <span class="price-old">1200 ريال</span>
+                                        <span class="price-saved">قبل الخصم</span>
+                                    </div>
                                 </div>
-
-                                <p class="pricing-tag ms-auto">وفر حتى <span>20%</span></p>
+                                <div class="savings-badge">
+                                    <span>وفر 400 ريال</span>
+                                </div>
                             </div>
 
-                            <ul class="pricing-list mt-3">
-                                <li class="pricing-list-item">40+ ساعة تدريبية</li>
-                                <li class="pricing-list-item">تطبيق عملي مباشر</li>
-                                <li class="pricing-list-item">مواد تدريبية عربية</li>
-                                <li class="pricing-list-item">شهادة إتمام الدورة</li>
-                            </ul>
+                           
 
-                            <a class="link-fx-1 color-contrast-higher mt-4" href="#section_6">
-                                <span>سجل الآن</span>
+<a class="link-fx-1" href="https://altawthiq.com/checkout/?add-to-cart=903">
+                                <span>※ احجز مقعدك</span>
                                 <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
                                     <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
                                         <circle cx="16" cy="16" r="15.5"></circle>
@@ -359,26 +356,28 @@ https://templatemo.com/tm-583-festava-live
                         </div>
                     </div>
 
-                    <div class="col-lg-6 col-12 mt-4 mt-lg-0">
+                    <!-- الخطة الثانية: خارج المقر -->
+                    <div class="col-lg-6 col-12">
                         <div class="pricing-thumb reworked-plan">
-                            <div class="d-flex">
+                            <div class="d-flex justify-content-between align-items-start flex-wrap gap-3">
                                 <div>
-                                    <span class="plan-chip">مسار مهني متقدم</span>
-                                    <h3><small>الخطة المتقدمة</small> 1450 ريال</h3>
-                                    <p>تدريب موسع + متابعة مهنية بعد التخرج</p>
+                                    <span class="plan-chip">خارج مقر منتدى الوعي الفكري</span>
+                                    <div class="price-current">1800 <span style="font-size: 1rem;">ريال</span></div>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <span class="price-old">2200 ريال</span>
+                                        <span class="price-saved"> قبل الخصم</span>
+                                    </div>
+                                </div>
+                                <div class="savings-badge">
+                                    
+                                    <span>وفر 400 ريال</span>
                                 </div>
                             </div>
 
-                            <ul class="pricing-list mt-3">
-                                <li class="pricing-list-item">كل مزايا الخطة الأساسية</li>
-                                <li class="pricing-list-item">ساعات تطبيق إضافية</li>
-                                <li class="pricing-list-item">جلسات تطوير فردية</li>
-                                <li class="pricing-list-item">إرشاد للالتحاق بسوق العمل</li>
-                                <li class="pricing-list-item">أولوية في الدعم</li>
-                            </ul>
 
-                            <a class="link-fx-1 color-contrast-higher mt-4" href="#section_6">
-                                <span>احجز مقعدك</span>
+
+<a class="link-fx-1" href="https://altawthiq.com/checkout/?add-to-cart=904">
+                                <span>※ احجز مقعدك</span>
                                 <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
                                     <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
                                         <circle cx="16" cy="16" r="15.5"></circle>
@@ -389,28 +388,23 @@ https://templatemo.com/tm-583-festava-live
                             </a>
                         </div>
                     </div>
-
                 </div>
-            </div>
-        </section>
 
+                          </div>
+        </section>
 
         <section class="contact-section section-padding" id="section_6">
             <div class="container">
                 <div class="row">
-
                     <div class="col-lg-8 col-12 mx-auto">
                         <h2 class="text-center mb-4">مهتم؟ تواصل معنا الآن</h2>
-
                         <nav class="d-flex justify-content-center">
-                            <div class="nav nav-tabs align-items-baseline justify-content-center" id="nav-tab"
-                                role="tablist">
+                            <div class="nav nav-tabs align-items-baseline justify-content-center" id="nav-tab" role="tablist">
                                 <button class="nav-link active" id="nav-ContactForm-tab" data-bs-toggle="tab"
                                     data-bs-target="#nav-ContactForm" type="button" role="tab"
                                     aria-controls="nav-ContactForm" aria-selected="false">
                                     <h5>نموذج التسجيل</h5>
                                 </button>
-
                                 <button class="nav-link" id="nav-ContactMap-tab" data-bs-toggle="tab"
                                     data-bs-target="#nav-ContactMap" type="button" role="tab"
                                     aria-controls="nav-ContactMap" aria-selected="false">
@@ -418,122 +412,82 @@ https://templatemo.com/tm-583-festava-live
                                 </button>
                             </div>
                         </nav>
-
                         <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-ContactForm" role="tabpanel"
                                 aria-labelledby="nav-ContactForm-tab">
-                                <form class="custom-form contact-form mb-5 mb-lg-0" action="#" method="post"
-                                    role="form">
+                                <form class="custom-form contact-form mb-5 mb-lg-0" action="#" method="post" role="form">
                                     <div class="contact-form-body">
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-12">
                                                 <input type="text" name="contact-name" id="contact-name"
                                                     class="form-control" placeholder="الاسم الكامل" required>
                                             </div>
-
                                             <div class="col-lg-6 col-md-6 col-12">
                                                 <input type="email" name="contact-email" id="contact-email"
                                                     pattern="[^ @]*@[^ @]*" class="form-control"
                                                     placeholder="البريد الإلكتروني" required>
                                             </div>
                                         </div>
-
                                         <input type="text" name="contact-company" id="contact-company"
                                             class="form-control" placeholder="المدينة" required>
-
                                         <textarea name="contact-message" rows="3" class="form-control"
                                             id="contact-message" placeholder="اكتب استفسارك"></textarea>
-
                                         <div class="col-lg-4 col-md-10 col-8 mx-auto">
                                             <button type="submit" class="form-control">إرسال الطلب</button>
                                         </div>
                                     </div>
                                 </form>
                             </div>
-
                             <div class="tab-pane fade" id="nav-ContactMap" role="tabpanel"
                                 aria-labelledby="nav-ContactMap-tab">
                                 <iframe class="google-map"
-                                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3625.9398292183596!2d46.70643468500097!3d24.6601993841488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f050035914655%3A0x3f84ffe264b6fbd7!2z2YXZhtiq2K_ZiSDYp9mE2YjYudmKINin2YTZgdmD2LHZig!5e0!3m2!1sar!2ssa!4v1776866706731!5m2!1sar!2ssa"
-
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3625.9398292183596!2d46.70643468500097!3d24.6601993841488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f050035914655%3A0x3f84ffe264b6fbd7!2z2YXZhtiq2K_ZiSDYp9mE2YjYudmKINin2YTZgdmD2LHZig!5e0!3m2!1sar!2ssa!4v1776866706731!5m2!1sar!2ssa"
                                     width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                                     referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                <!-- You can easily copy the embed code from Google Maps -> Share -> Embed a map // -->
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
     </main>
 
-
     <footer class="site-footer">
         <div class="site-footer-top">
             <div class="container">
                 <div class="row">
-
                     <div class="col-lg-6 col-12">
                         <h2 class="text-white mb-lg-0">منتدى الوعي الفكري</h2>
                     </div>
-
                     <div class="col-lg-6 col-12 d-flex justify-content-lg-end align-items-center">
                         <ul class="social-icon d-flex justify-content-lg-end">
-                            
-
                             <li class="social-icon-item">
-                                <a href="#" class="social-icon-link">
-                                    <span class="bi-instagram"></span>
-                                </a>
+                                <a href="#" class="social-icon-link"><span class="bi-instagram"></span></a>
                             </li>
-
                             <li class="social-icon-item">
-                                <a href="#" class="social-icon-link">
-                                    <span class="bi-youtube"></span>
-                                </a>
+                                <a href="#" class="social-icon-link"><span class="bi-tiktok"></span></a>
                             </li>
-
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="row">
-
                 <div class="col-lg-6 col-12 mb-4 pb-2">
-
                     <ul class="site-footer-links">
-                        <li class="site-footer-link-item">
-
-                       
-
-                        
+                        <li class="site-footer-link-item"></li>
                     </ul>
                 </div>
-
                 <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
                     <h5 class="site-footer-title mb-3">للاستفسار</h5>
-
                     <p class="text-white d-flex mb-1">
-                        <a href="tel:+966553300598" class="site-footer-link">
-                            966553300598+
-                        </a>
-                    </p>
-
-                    <p class="text-white d-flex">
-                        
+                        <a href="tel:+966553300598" class="site-footer-link">+966553300598</a>
                     </p>
                 </div>
-
                 <div class="col-lg-3 col-md-6 col-11 mb-4 mb-lg-0 mb-md-0">
                     <h5 class="site-footer-title mb-3">الموقع</h5>
-
-                    <p class="text-white d-flex mt-3 mb-2">
-                        الرياض حي المربع</p>
-
+                    <p class="text-white d-flex mt-3 mb-2">الرياض حي المربع</p>
                     <a class="link-fx-1 color-contrast-higher mt-3" href="#">
                         <span>عرض الخريطة</span>
                         <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
@@ -547,39 +501,22 @@ https://templatemo.com/tm-583-festava-live
                 </div>
             </div>
         </div>
-
         <div class="site-footer-bottom">
             <div class="container">
                 <div class="row">
-
                     <div class="col-lg-3 col-12 mt-5">
-                        <p class="copyright-text">Copyright © 2026 منتدى الوعي الفكري</p>
-                    </div>
-
-                    <div class="col-lg-8 col-12 mt-lg-5">
-                        <ul class="site-footer-links">
-                            <li class="site-footer-link-item">
-                               
-                        </ul>
+                        <p class="copyright-text"> © 2026 منتدى الوعي الفكري</p>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!--
-
-T e m p l a t e M o
-
--->
-
-    <!-- JAVASCRIPT FILES -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.sticky.js"></script>
     <script src="js/click-scroll.js"></script>
     <script src="js/custom.js"></script>
-
 </body>
 
 </html>
