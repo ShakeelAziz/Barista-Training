@@ -1,530 +1,570 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Altawthiq | دورة تدريب الباريستا - منتدى الوعي الفكري</title>
+    <meta name="description" content="برنامج تدريب باريستا احترافي باللغة العربية - خصم 400 ريال - تسجيل مباشر">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="برنامج تدريب باريستا احترافي باللغة العربية">
-    <meta name="author" content="Barista Academy">
-    <title>Altawthiq national Documentation - تدريب الباريستا</title>
-
-    <!-- CSS FILES -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-icons.css" rel="stylesheet">
-    <link href="css/templatemo-festava-live.css" rel="stylesheet">
-
+    <!-- Fonts - Rubik with Arabic support -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800&amp;display=swap" rel="stylesheet">
+    <!-- Backup Arabic font -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&amp;display=swap" rel="stylesheet">
+    
     <style>
+        /* IMPORTANT: Force Rubik font over WordPress theme */
+        .force-rubik-font,
+        .force-rubik-font * {
+            font-family: 'Rubik', 'Tajawal', sans-serif !important;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: "Tajawal", sans-serif;
-        }
-
-        /* تخصيص عرض خطط الدفع مع خصم 400 ريال - تم تغيير الخلفية إلى فاتحة */
-        .pricing-section {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        }
-
-        .pricing-thumb.reworked-plan {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 28px;
-            padding: 2rem 1.8rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            height: 100%;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        }
-
-        .pricing-thumb.reworked-plan:hover {
-            transform: translateY(-8px);
-            border-color: rgba(0, 0, 0, 0.2);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        /* شارة توفير 400 ريال */
-        .savings-badge {
-            background: linear-gradient(135deg, #f8cb8b, #e6a017);
+            background: #fff;
             color: #1e1e1e;
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-size: 15px;
-            font-weight: 800;
-            white-space: nowrap;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            box-shadow: 0 4px 12px rgba(248, 203, 139, 0.3);
+            line-height: 1.5;
+            direction: rtl;
         }
 
-        .savings-badge i {
-            font-size: 1.1rem;
+        /* Main wrapper with forced font */
+        .force-rubik-font {
+            max-width: 100%;
+            overflow-x: hidden;
         }
-
-        .price-current {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #b87333;
-            margin: 0.75rem 0 0.25rem;
+.brown-text {
+    color: #8B5A2B !important;
+}
+        .container {
+            width: 100%;
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
+            margin-right: auto;
+            margin-left: auto;
         }
+        @media (min-width: 576px) { .container { max-width: 540px; } }
+        @media (min-width: 768px) { .container { max-width: 720px; } }
+        @media (min-width: 992px) { .container { max-width: 960px; } }
+        @media (min-width: 1200px) { .container { max-width: 1140px; } }
+        @media (min-width: 1400px) { .container { max-width: 1320px; } }
 
-        .price-old {
-            font-size: 1rem;
-            color: rgba(0, 0, 0, 0.5);
-            text-decoration: line-through;
-            margin-right: 10px;
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -0.75rem;
+            margin-left: -0.75rem;
         }
-
-        .price-saved {
-            color: #2e7d32;
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-top: 5px;
+        .col-12, .col-lg-6, .col-lg-8 {
+            position: relative;
+            width: 100%;
+            padding-right: 0.75rem;
+            padding-left: 0.75rem;
         }
-
-        .plan-chip {
-            display: inline-block;
-            background: rgba(184, 115, 51, 0.15);
-            color: #b87333;
-            font-size: 0.8rem;
-            font-weight: 700;
-            border-radius: 999px;
-            padding: 0.3rem 1rem;
-            margin-bottom: 0.65rem;
-            border: 1px solid rgba(184, 115, 51, 0.3);
+        @media (min-width: 992px) {
+            .col-lg-6 { flex: 0 0 auto; width: 50%; }
+            .col-lg-8 { flex: 0 0 auto; width: 66.66666667%; }
         }
+        .d-flex { display: flex; }
+        .align-items-center { align-items: center; }
+        .justify-content-between { justify-content: space-between; }
+        .justify-content-center { justify-content: center; }
+        .text-center { text-align: center; }
+        .text-white { color: #fff; }
+        .mb-3 { margin-bottom: 1rem; }
+        .mb-4 { margin-bottom: 1.5rem; }
+        .mb-5 { margin-bottom: 2rem; }
+        .mt-4 { margin-top: 1.5rem; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .gap-2 { gap: 0.5rem; }
+        .gap-3 { gap: 1rem; }
+        .gap-4 { gap: 1.5rem; }
 
-        .link-fx-1 {
-            margin-top: 25px;
-            padding-top: 18px;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-            text-decoration: none;
+        /* Navbar */
+        .navbar {
+            background: #ffffff;
+            padding: 0.8rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            width: 100%;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            border-bottom: 1px solid rgba(139,90,43,0.15);
+        }
+        .navbar .container {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            transition: all 0.3s ease;
-            color: #b87333;
-            font-weight: 600;
+            flex-wrap: wrap;
+        }
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .logo-img {
+            height: 48px;
+            width: auto;
+            transition: transform 0.2s ease;
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-decoration: none;
+            background: linear-gradient(135deg, #8B5A2B 0%, #A0522D 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        @media (max-width: 768px) {
+            .navbar-brand { font-size: 1.2rem; }
+            .logo-img { height: 38px; }
         }
 
-        .link-fx-1:hover {
-            color: #000;
-            gap: 10px;
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            overflow: hidden;
+            padding-top: 100px;
+            min-height: 600px;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+        }
+        .hero-section .section-overlay {
+            background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .hero-section .container {
+            position: relative;
+            z-index: 3;
+        }
+        .video-wrap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .custom-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-section small {
+            font-size: 1rem;
+            font-weight: 500;
+            background: rgba(139,90,43,0.85);
+            display: inline-block;
+            padding: 0.3rem 1.2rem;
+            border-radius: 50px;
+            backdrop-filter: blur(4px);
+        }
+        .hero-section h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.3);
+        }
+        @media (max-width: 768px) {
+            .hero-section h1 { font-size: 2.2rem; }
+            .hero-section { height: auto; padding: 140px 0 70px; min-height: 500px; }
+        }
+        .date-wrap, .location-wrap {
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(8px);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .date-wrap h5, .location-wrap h5 {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        @media (max-width: 768px) {
+            .date-wrap h5, .location-wrap h5 { font-size: 0.85rem; }
+        }
+        .social-share .social-icon {
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(8px);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
         }
 
-        .link-fx-1 .icon {
-            width: 32px;
-            height: 32px;
-            flex-shrink: 0;
-            transition: transform 0.3s ease;
+        .section-padding {
+            padding: 80px 0;
+        }
+        @media (max-width: 768px) {
+            .section-padding { padding: 50px 0; }
         }
 
-        .link-fx-1:hover .icon {
-            transform: translateX(-5px);
-        }
-
-        .training-plan-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 1.25rem;
-            text-align: right;
-        }
-
-        .training-plan-card {
-            background: rgba(0, 0, 0, 0.06);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 18px;
-            padding: 1.25rem;
+        .about-section { background: #f5f0eb; }
+        .about-image { width: 100%; border-radius: 20px; }
+        .about-text-wrap { position: relative; }
+        .about-text-info {
+            background: rgba(255, 255, 240, 0.95);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin-top: -50px;
+            margin-right: 20px;
+            margin-left: 20px;
+            position: relative;
+            z-index: 2;
             backdrop-filter: blur(4px);
         }
 
+        .schedule-section {
+            background: #1e1e1e;
+            color: #fff;
+        }
+        .training-plan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .training-plan-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 18px;
+            padding: 1.5rem;
+            backdrop-filter: blur(5px);
+        }
         .training-plan-list {
+            list-style: none;
+            padding: 0;
+        }
+        .training-plan-list li {
+            padding-right: 1.5rem;
+            margin-bottom: 0.7rem;
+            position: relative;
+            color: #f8f9fa;
+        }
+        .training-plan-list li::before {
+            content: "※";
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .pricing-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        .pricing-thumb {
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(8px);
+            border-radius: 28px;
+            padding: 2rem;
+            transition: 0.3s;
+            height: 100%;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.08);
+        }
+        .pricing-thumb:hover { transform: translateY(-6px); }
+        .plan-chip {
+            background: rgba(184,115,51,0.15);
+            color: #b87333;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: inline-block;
+        }
+        .price-current {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #b87333;
+            margin: 0.5rem 0 0.2rem;
+        }
+        .price-old {
+            font-size: 0.9rem;
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+        .price-saved { color: #2e7d32; font-weight: 500; }
+        .savings-badge {
+            background: linear-gradient(135deg, #f8cb8b, #e6a017);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .link-fx-1 {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+            color: #b87333;
+            font-weight: 600;
+        }
+        .icon { width: 28px; transition: 0.2s; }
+
+        .contact-card {
+            background: #fff;
+            border-radius: 28px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .phone-link {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #b87333;
+            text-decoration: none;
+        }
+        .google-map {
+            border-radius: 20px;
+            width: 100%;
+            height: 380px;
+            border: 0;
+        }
+
+        .site-footer {
+            background: #000;
+            color: #fff;
+            padding: 2rem 0 1rem;
+            margin-top: 2rem;
+        }
+        .social-icon {
+            display: flex;
+            gap: 1rem;
             list-style: none;
             margin: 0;
             padding: 0;
         }
-
-        .training-plan-list li {
-            position: relative;
-            padding-right: 1rem;
-            margin-bottom: 0.6rem;
-            color: #ffffff;
-            font-weight: 500;
+        .social-icon-link {
+            color: #fff;
+            font-size: 1.4rem;
+            transition: 0.2s;
         }
-
-        .training-plan-list li::before {
-            content: "☕";
-            position: absolute;
-            right: -0.2rem;
-            top: 0;
-            font-size: 0.8rem;
-        }
+        .social-icon-link:hover { color: #F8CB2E; }
 
         @media (max-width: 768px) {
-            .training-plan-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .price-current {
-                font-size: 1.8rem;
-            }
-            
-            .pricing-thumb.reworked-plan {
-                padding: 1.5rem;
-            }
+            .price-current { font-size: 1.8rem; }
+            .phone-link { font-size: 1.2rem; }
+            .gap-3 { gap: 0.75rem; }
         }
-
-        /* جعل خلفية "عن برنامج تدريب الباريستا" فاتحة */
-        .about-section {
-            background: #f5f0eb !important;
-        }
-        .about-section .text-white,
-        .about-section .text-white h2,
-        .about-section .text-white h6,
-        .about-section .text-white p {
-            color: #2c2c2c !important;
-        }
-        .services-info h2,
-        .services-info p,
-        .services-info h6 {
-            color: #2c2c2c !important;
-        }
-        .about-text-wrap .about-text-info h3,
-        .about-text-wrap .about-text-info p {
-            color: #2c2c2c !important;
-        }
-        .about-text-wrap .about-text-info {
-            background: rgba(255,255,240,0.9);
-            border-radius: 20px;
-        }
+        .date-wrap i, .location-wrap i { margin-left: 0.5rem; }
     </style>
-</head>
+    
+    <!-- Bootstrap Icons -->
+    <style>
+        .bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
+            display: inline-block;
+            font-family: "bootstrap-icons";
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            line-height: 1;
+        }
+        @font-face {
+            font-family: "bootstrap-icons";
+            src: url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff2") format("woff2"),
+                 url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff") format("woff");
+        }
+        .bi-clock::before { content: "\F293"; }
+        .bi-geo-alt::before { content: "\F3E8"; }
+        .bi-instagram::before { content: "\F437"; }
+        .bi-tiktok::before { content: "\F6CC"; }
+        .bi-telephone-fill::before { content: "\F5B4"; }
+    </style>
 
-<body>
 
-    <main>
 
-        <header class="site-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-12 d-flex flex-wrap"></div>
+<!-- IMPORTANT: This wrapper forces Rubik font over WordPress theme -->
+<div class="force-rubik-font" style="max-width:100%; overflow-x:hidden;">
+    
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo-wrapper">
+                <img src="https://altawthiq.com/wp-content/uploads/2026/05/wn5wnp-Y_400x400.png" alt="الشعار" class="logo-img">
+                <span class="navbar-brand">منتدى الوعي الفكري</span>
+            </a>
+        </div>
+    </nav>
+
+    <section class="hero-section" id="section_1">
+        <div class="video-wrap">
+            <video autoplay="" loop="" muted="" playsinline="" class="custom-video">
+                <source src="https://d.top4top.io/m_37752ny5d1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="section-overlay"></div>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    <small class="text-white">※ رحلة احتراف القهوة تبدأ هنا ※</small>
+                    <h1 class="text-white mb-4">دورة تدريب الباريستا</h1>
                 </div>
-            </div>
-        </header>
+               <div class="col-12 mt-4">
+    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 1rem; flex-wrap: wrap;">
+        <div class="date-wrap">
+            <h5 class="text-white mb-0"><i class="bi-clock"></i> 5 أسابيع تدريبية - ساعتان يوميًّا</h5>
+        </div>
+        <div class="location-wrap">
+            <h5 class="text-white mb-0"><i class="bi-geo-alt"></i> الرياض، حي المربع - بجانب محطة الجوازات</h5>
+        </div>
+        <div class="social-share">
+            <ul class="social-icon mb-0">
+                <span class="text-white me-2">تابعنا:</span>
+                <li><a href="#" class="social-icon-link"><i class="bi-instagram"></i></a></li>
+                <li><a href="#" class="social-icon-link"><i class="bi-tiktok"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
 
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <img src="images/wn5wnp-Y_400x400.png" alt="logo" style="height:40px; margin-left:10px;">
-                <a class="navbar-brand" href="index.html">منتدى الوعي الفكري</a>
-                <a href="#section_6" class="btn custom-btn d-lg-none ms-auto me-4">سجل الآن</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
-                        <li class="nav-item"></li>
-                        <li class="nav-item"></li>
-                    </ul>
-                    <a href="#section_6" class="btn custom-btn d-lg-block d-none">احجز مقعدك</a>
-                </div>
-            </div>
-        </nav>
+<style>
+@media (max-width: 768px) {
+    .hero-section .col-12 > div[style*="flex-direction"] {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.75rem !important;
+    }
+    .date-wrap, .location-wrap, .social-share {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+    .date-wrap h5, .location-wrap h5 {
+        font-size: 0.8rem !important;
+        white-space: normal !important;
+        text-align: center !important;
+    }
+}
+</style>
+        </div>
+    </div></section>
 
-        <section class="hero-section" id="section_1">
-            <div class="section-overlay"></div>
-            <div class="container d-flex justify-content-center align-items-center">
-                <div class="row">
-                    <div class="col-12 mt-auto mb-5 text-center">
-                        <small>رحلة احتراف القهوة تبدأ هنا</small>
-                        <h1 class="text-white mb-5">دورة تدريب الباريستا</h1>
-                    </div>
-                    <div class="col-lg-12 col-12 mt-auto d-flex flex-column flex-lg-row text-center">
-                        <div class="date-wrap">
-                            <h5 class="text-white">
-                                <i class="custom-icon bi-clock me-2"></i>
-                                5 أسابيع تدريبية - بمعدل ساعتين في اليوم
-                            </h5>
-                        </div>
-                        <div class="location-wrap mx-auto py-3 py-lg-0">
-                            <h5 class="text-white">
-                                <i class="custom-icon bi-geo-alt me-2"></i>
-                                الرياض، حي المربع<br> بجانب محطة الجوازات
-                            </h5>
-                        </div>
-                        <div class="social-share">
-                            <ul class="social-icon d-flex align-items-center justify-content-center">
-                                <span class="text-white me-3">تابعنا:</span>
-                                <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link"><span class="bi-instagram"></span></a>
-                                </li>
-                                <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link"><span class="bi-tiktok"></span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="video-wrap">
-                <video autoplay="" loop="" muted="" class="custom-video" poster="">
-                    <source src="video/barista.mp4" type="video/mp4">
-                </video>
-            </div>
-        </section>
-
-        <section class="about-section section-padding" id="section_2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-12 mb-4 mb-lg-0 d-flex align-items-center">
-                        <div class="services-info">
-                            <h2 class="mb-4">عن برنامج تدريب الباريستا</h2>
-                            <p>برنامج تدريبي عملي باللغة العربية يركز على تأهيل المتدرب للعمل في المقاهي المختصة باحتراف.</p>
-                            <h6 class="mt-4">ماذا ستتعلم؟</h6>
-                            <p>أساسيات القهوة، إتقان الإسبريسو، تبخير الحليب، فن اللاتيه آرت، وخدمة العملاء.</p>
-                            <h6 class="mt-4">لمن هذا البرنامج؟</h6>
-                            <p>للمبتدئين والطامحين لبدء مسار مهني احترافي في عالم القهوة المختصة.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-12">
-                        <div class="about-text-wrap">
-                            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop" class="about-image img-fluid">
-                            <div class="about-text-info d-flex">
-                                <div class="d-flex">
-                                    <i class="about-text-icon bi-cup-hot"></i>
-                                </div>
-                                <div class="ms-4">
-                                    <h3>تجربة تدريب عملية</h3>
-                                    <p class="mb-0">تطبيق واقعي داخل بيئة تحاكي المقاهي المختصة</p>
-                                </div>
-                            </div>
-                        </div>
+    <section class="about-section section-padding" id="section_2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-12 mb-4">
+                    <div class="services-info">
+                     <h2 class="mb-3">اكتشف <span class="brown-text">فنّ القهوة</span> من البداية حتى الاحتراف، وتعلّم أسرار التحضير، وتوازن النكهات،<br> وصناعة كوب يترك انطباعًا لا يُنسى.</h2>
+                     
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="schedule-section section-padding" id="section_4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <h2 class="text-white mb-4">ماذا ستتعلم خلال البرنامج؟</h2>
-                        <div class="training-plan-grid">
-                            <div class="training-plan-card">
-                                <ul class="training-plan-list">
-                                   <li>اختيار نوع القهوة المناسب</li>
-                                    <li>طريقة الطحن الصحيحة</li>
-                                </ul>
-                            </div>
-                            <div class="training-plan-card">
-                                <ul class="training-plan-list">
-                                    <li>الاستخلاص المثالي للإسبريسو</li>
-                                    <li>إعداد المشروبات الساخنة والباردة</li>
-                                </ul>
-                            </div>
-                            <div class="training-plan-card">
-                                <ul class="training-plan-list">
-                                      <li>أساسيات الرسم على القهوة
-<br> (Latte Art)</li>
-                                    <li>تقديم المشروبات بثقة وثبات</li>
-                                </ul>
-                            </div>
+                <div class="col-lg-6 col-12">
+                    <div class="about-text-wrap">
+                        <img src="https://images.unsplash.com/photo-1670404161009-29548c027d06?q=80&amp;w=765&amp;auto=format&amp;fit=crop" class="about-image" alt="barista">
+                        <div class="about-text-info d-flex">
+                            <div class="me-3"><h3>تجربة تدريب عملية</h3><p>تطبيق واقعي داخل بيئة تحاكي المقاهي المختصة</p></div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- قسم خطط الدفع مع التركيز على "وفر 400 ريال" (تم تغيير اللون إلى فاتح) -->
-        <section class="pricing-section section-padding section-bg" id="section_5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-12 mx-auto text-center">
-                        <h2 class="text-dark mb-3">خطط الدفع</h2>
-                        <p class="text-dark-50 mb-5">استثمار بسيط … مقابل مهارة تفتح لك باب دخل</p>
-                    </div>
-                </div>
-
-                <div class="row g-4">
-                    <!-- الخطة الأولى: داخل المقر -->
-                    <div class="col-lg-6 col-12">
-                        <div class="pricing-thumb reworked-plan">
-                            <div class="d-flex justify-content-between align-items-start flex-wrap gap-3">
-                                <div>
-                                    <span class="plan-chip"> في مقر منتدى الوعي الفكري</span>
-                                    <div class="price-current">800 <span style="font-size: 1rem;">ريال</span></div>
-                                    <div class="d-flex align-items-center flex-wrap gap-2">
-                                        <span class="price-old">1200 ريال</span>
-                                        <span class="price-saved">قبل الخصم</span>
-                                    </div>
-                                </div>
-                                <div class="savings-badge">
-                                    <span>وفر 400 ريال</span>
-                                </div>
-                            </div>
-
-                           
-
-<a class="link-fx-1" href="https://altawthiq.com/checkout/?add-to-cart=903&quantity=1"" style="text-decoration: none; justify-content: center; gap: 0;">
-                                <span>※ احجز مقعدك</span>
-                                <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
-                                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                        <circle cx="16" cy="16" r="15.5"></circle>
-                                        <line x1="10" y1="18" x2="16" y2="12"></line>
-                                        <line x1="16" y1="12" x2="22" y2="18"></line>
-                                    </g>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- الخطة الثانية: خارج المقر -->
-                    <div class="col-lg-6 col-12">
-                        <div class="pricing-thumb reworked-plan">
-                            <div class="d-flex justify-content-between align-items-start flex-wrap gap-3">
-                                <div>
-                                    <span class="plan-chip">خارج مقر منتدى الوعي الفكري</span>
-                                    <div class="price-current">1800 <span style="font-size: 1rem;">ريال</span></div>
-                                    <div class="d-flex align-items-center flex-wrap gap-2">
-                                        <span class="price-old">2200 ريال</span>
-                                        <span class="price-saved"> قبل الخصم</span>
-                                    </div>
-                                </div>
-                                <div class="savings-badge">
-                                    
-                                    <span>وفر 400 ريال</span>
-                                </div>
-                            </div>
-
-
-
-<a class="link-fx-1" href="https://altawthiq.com/checkout/?add-to-cart=904&quantity=1"" style="text-decoration: none; justify-content: center; gap: 0;">
-                                <span>※ احجز مقعدك</span>
-                                <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
-                                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                        <circle cx="16" cy="16" r="15.5"></circle>
-                                        <line x1="10" y1="18" x2="16" y2="12"></line>
-                                        <line x1="16" y1="12" x2="22" y2="18"></line>
-                                    </g>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                          </div>
-        </section>
-
-        <section class="contact-section section-padding" id="section_6">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-12 mx-auto">
-                        <h2 class="text-center mb-4">مهتم؟ تواصل معنا الآن</h2>
-
-<!-- البطاقة الجديدة لرقم التواصل -->
-                        <div class="contact-card text-center">
-                            <div class="contact-icon">
-                                <i class="bi bi-telephone-fill"></i>
-                            </div>
-                            <div class="contact-label">للتواصل والاستفسار</div>
-                            <a href="tel:+966553300598" class="phone-link text-decoration-none">
-                                <span class="phone-number">+966 55 330 0598</span>
-                            </a>
-
-                        <nav class="d-flex justify-content-center">
-                            <div class="nav nav-tabs align-items-baseline justify-content-center" id="nav-tab" role="tablist">
-                                <!-- تم حذف زر "نموذج التسجيل" نهائياً كما هو مطلوب، وإبقاء زر "الموقع" فقط -->
-                                <button class="nav-link active" id="nav-ContactMap-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-ContactMap" type="button" role="tab"
-                                    aria-controls="nav-ContactMap" aria-selected="true">
-                                    <h5>الموقع</h5>
-                                </button>
-                            </div>
-                        </nav>
-                        <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
-                            <!-- تم حذف tab-pane الخاص بنموذج التسجيل، وتم ترك خريطة الموقع فقط وجعلها نشطة -->
-                            <div class="tab-pane fade show active" id="nav-ContactMap" role="tabpanel"
-                                aria-labelledby="nav-ContactMap-tab">
-                                <iframe class="google-map"
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3625.9398292183596!2d46.70643468500097!3d24.6601993841488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f050035914655%3A0x3f84ffe264b6fbd7!2z2YXZhtiq2K_ZiSDYp9mE2YjYudmKINin2YTZgdmD2LHZig!5e0!3m2!1sar!2ssa!4v1776866706731!5m2!1sar!2ssa"
-                                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="site-footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-12">
-                        <h2 class="text-white mb-lg-0">منتدى الوعي الفكري</h2>
-                    </div>
-                    <div class="col-lg-6 col-12 d-flex justify-content-lg-end align-items-center">
-                        <ul class="social-icon d-flex justify-content-lg-end">
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link"><span class="bi-instagram"></span></a>
-                            </li>
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link"><span class="bi-tiktok"></span></a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <section class="schedule-section section-padding" id="section_4">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-12 mb-4 pb-2">
-                    <ul class="site-footer-links">
-                        <li class="site-footer-link-item"></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
-                    <h5 class="site-footer-title mb-3">للاستفسار</h5>
-                    <p class="text-white d-flex mb-1">
-                        <a href="tel:+966553300598" class="site-footer-link">+966553300598</a>
-                    </p>
-                </div>
-                <div class="col-lg-3 col-md-6 col-11 mb-4 mb-lg-0 mb-md-0">
-                    <h5 class="site-footer-title mb-3">الموقع</h5>
-                    <p class="text-white d-flex mt-3 mb-2">الرياض حي المربع</p>
-                    <a class="link-fx-1 color-contrast-higher mt-3" href="#">
-                        <span>عرض الخريطة</span>
-                        <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
-                            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="16" cy="16" r="15.5"></circle>
-                                <line x1="10" y1="18" x2="16" y2="12"></line>
-                                <line x1="16" y1="12" x2="22" y2="18"></line>
-                            </g>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="site-footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-12 mt-5">
-                        <p class="copyright-text"> © 2026 منتدى الوعي الفكري</p>
+                <div class="col-12 text-center">
+                    <h2 class="text-white mb-4">ماذا ستتعلم خلال الدورة؟</h2>
+                    <div class="training-plan-grid">
+                        <div class="training-plan-card"><ul class="training-plan-list"><li>اختيار نوع القهوة المناسب</li><li>طريقة الطحن الصحيحة</li></ul></div>
+                        <div class="training-plan-card"><ul class="training-plan-list"><li>الاستخلاص المثالي للإسبريسو</li><li>إعداد المشروبات الساخنة والباردة</li></ul></div>
+                        <div class="training-plan-card"><ul class="training-plan-list"><li>أساسيات الرسم على القهوة (Latte Art)</li><li>تقديم المشروبات بثقة وثبات</li></ul></div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <section class="pricing-section section-padding" id="section_5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto"><h2 class="text-dark">خطط الدفع</h2><p>استثمار بسيط … مقابل مهارة تفتح لك باب دخل</p></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6 col-12">
+                    <div class="pricing-thumb">
+                        <div class="d-flex justify-content-between align-items-start flex-wrap">
+                            <div><span class="plan-chip">في مقر منتدى الوعي الفكري</span>
+                            <div class="price-current">800 <span style="font-size:1rem;">ريال</span></div>
+                            <div class="d-flex gap-2"><span class="price-old">1200 ريال</span> <span class="price-saved">قبل الخصم</span></div></div>
+                            <div class="savings-badge"><span>وفر 400 ريال</span></div>
+                        </div>
+                        <a class="link-fx-1" href="https://altawthiq.com/checkout/?add-to-cart=903&amp;quantity=1" target="_blank" style="justify-content: center; gap: 8px;">
+                            <span>※ احجز مقعدك</span>
+                            <svg class="icon" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="15.5"></circle><line x1="10" y1="18" x2="16" y2="12"></line><line x1="16" y1="12" x2="22" y2="18"></line></g></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="pricing-thumb">
+                        <div class="d-flex justify-content-between align-items-start flex-wrap">
+                            <div><span class="plan-chip">خارج مقر منتدى الوعي الفكري</span>
+                            <div class="price-current">1800 <span style="font-size:1rem;">ريال</span></div>
+                            <div class="d-flex gap-2"><span class="price-old">2200 ريال</span> <span class="price-saved">قبل الخصم</span></div></div>
+                            <div class="savings-badge"><span>وفر 400 ريال</span></div>
+                        </div>
+                        <a class="link-fx-1" href="https://altawthiq.com/checkout/?add-to-cart=904&amp;quantity=1" target="_blank" style="justify-content: center; gap: 8px;">
+                            <span>※ احجز مقعدك</span>
+                            <svg class="icon" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="15.5"></circle><line x1="10" y1="18" x2="16" y2="12"></line><line x1="16" y1="12" x2="22" y2="18"></line></g></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section section-padding" id="section_6">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-12 mx-auto">
+                    <h2 class="text-center mb-4">مهتم؟ تواصل معنا الآن</h2>
+                    <div class="contact-card text-center">
+                        <div><i class="bi-telephone-fill" style="font-size: 2rem; color:#b87333;"></i></div>
+                        <div class="contact-label fw-bold mt-2">للتواصل والاستفسار</div>
+                        <a href="tel:+966553300598" class="phone-link">+966 55 330 0598</a>
+                    </div>
+                    <div class="text-center mt-4"><h5>※ الموقع ※</h5></div>
+                    <iframe class="google-map mt-3" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3625.9398292183596!2d46.70643468500097!3d24.6601993841488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f050035914655%3A0x3f84ffe264b6fbd7!2z2YXZhtiq2K_ZiSDYp9mE2YjYudmKINin2YTZgdmD2LHZig!5e0!3m2!1sar!2ssa!4v1776866706731!5m2!1sar!2ssa" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-12"><h3 class="text-white">منتدى الوعي الفكري</h3></div>
+                <div class="col-lg-6 col-12 d-flex justify-content-lg-end"><ul class="social-icon"><li><a href="#" class="social-icon-link"><i class="bi-instagram"></i></a></li><li><a href="#" class="social-icon-link"><i class="bi-tiktok"></i></a></li></ul></div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-lg-3 col-md-6"><h5 class="site-footer-title">للاستفسار</h5><p><a href="tel:+966553300598" class="text-white">+966553300598</a></p></div>
+                <div class="col-lg-3 col-md-6"><h5 class="site-footer-title">الموقع</h5><p class="text-white">الرياض حي المربع</p></div>
+            </div>
+            <div class="row mt-5"><div class="col-12 text-center"><p class="copyright-text">© 2026 منتدى الوعي الفكري</p></div></div>
+        </div>
     </footer>
+</div>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.sticky.js"></script>
-    <script src="js/click-scroll.js"></script>
-    <script src="js/custom.js"></script>
-</body>
-
-</html>
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e){
+            const targetId = this.getAttribute('href');
+            if(targetId === "#" || targetId === "") return;
+            const targetElem = document.querySelector(targetId);
+            if(targetElem) {
+                e.preventDefault();
+                const offset = 80;
+                const elementPosition = targetElem.getBoundingClientRect().top + window.pageYOffset;
+                window.scrollTo({ top: elementPosition - offset, behavior: 'smooth' });
+            }
+        });
+    });
+</script>
